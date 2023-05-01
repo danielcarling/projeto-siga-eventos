@@ -8,14 +8,9 @@ export const globalStyles = globalCss({
    },
 
    body: {
-      backgroundColor: '$white',
+      backgroundColor: '$gray800',
       '-webkit-font-smoothing': 'antialised',
-      maxWidth: '50rem',
-      margin: 'auto',
+      fontFamily: 'Roboto',
+      lineHeight: '1.6',
    },
-
-   button: {
-      fontFamily: 'Inter',
-      fontWeight: 700,
-   }
 })

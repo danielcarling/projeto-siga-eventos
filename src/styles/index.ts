@@ -12,11 +12,26 @@ export const {
 } = createStitches({
    theme: {
       colors: {
-         white: '#f5f5f5',
+         green500: '#00b37e',
+         green700: '#00875f',
 
-         red500: '#ea3f37',
-         redGradient: 'linear-gradient(153.14deg, #EA3F36 0%, #910808 78.76%)',
-         redGradient2: 'linear-gradient(180deg, #FD5B5B 23.44%, #910808 100%)',
+         gray900: '#121214',
+         gray800: '#202024',
+         gray700: '#323238',
+         gray500: '#7c7c8a',
+         gray400: '#8d8d99',
+         gray300: '#c4c4cc',
+         gray100: '#e1e1e6',
+
+         white: '#fff',
+
+         red500: '#f75a68',
+      },
+
+      fontSizes: {
+         sm: '0.75rem',
+         md: '0.875rem',
+         lg: '1rem',
       }
    }
 })
