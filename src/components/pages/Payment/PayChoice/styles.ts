@@ -31,3 +31,33 @@ export const PayChoiceContainer = styled('div', {
    justifyContent: 'center',
    alignItems: 'center',
 })
+
+export const PixSelected = styled('div', {
+   display: 'flex',
+   flexDirection: 'column',
+   alignItems: 'center',
+
+   wordBreak: 'break-all',
+   textAlign: 'center',
+   fontFamily: 'Inter',
+
+   strong: {
+      margin: '1rem 0',
+   },
+
+   img: {
+      marginBottom: '1rem',
+   },
+   
+   span: {
+      
+   },
+})
+
+export const CardSelected = styled('div', {
+
+})
+
+export const BankSlipSelected = styled('div', {
+   
+})
