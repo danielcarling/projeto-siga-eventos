@@ -69,7 +69,7 @@ export default function PayChoice() {
             <CardSelected>
                <strong>Insira as informações do seu cartão de crédito para continuar:</strong>
 
-
+               
             </CardSelected>
          )}
 
