@@ -13,14 +13,21 @@ export default function PaymentForm() {
       const cleanedCpf = cpfValue.replace(/\D/g, "");
 
       // formata para o modelo de cpf caso o tamanho seja menor ou igual a 11
-      if(cleanedCpf.length <= 11) {
-         const formattedCpf = cleanedCpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+      if (cleanedCpf.length <= 11) {
+         const formattedCpf = cleanedCpf
+            .replace(/(\d{3})(\d)/, '$1.$2')
+            .replace(/(\d{3})(\d)/, '$1.$2')
+            .replace(/(\d{3})(\d{1,2})/, '$1-$2')
+            .replace(/(-\d{2})\d+?$/, '$1')
 
          setCpf(formattedCpf)
-      
-      // formata para o modelo de cnpj caso seja maior
-      } else if(cleanedCpf.length>11){
-         const formattedCnpj = cleanedCpf.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
+
+         // formata para o modelo de cnpj caso seja maior
+      } else if (cleanedCpf.length > 11) {
+         const formattedCnpj = cleanedCpf
+            .replace(/(\d{2})(\d{3})(\d{3})(\d)/, '$1.$2.$3/$4')
+            .replace(/(\d{4})(\d)/, '$1-$2')
+            .replace(/(-\d{2})\d+?$/, '$1')
 
          setCpf(formattedCnpj)
       }
@@ -38,16 +45,16 @@ export default function PaymentForm() {
 
    const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       const priceValue = event.target.value;
-    
+
       const cleanedPrice = Number(priceValue.replace(/\D/g, "")) / 100;
-    
+
       if (cleanedPrice > 0) {
-        const formattedPrice = cleanedPrice.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-        setPrice(formattedPrice);
+         const formattedPrice = cleanedPrice.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+         setPrice(formattedPrice);
       } else {
-        setPrice("");
+         setPrice("");
       }
-    };
+   };
 
    return (
       <PaymentContainer>
@@ -64,7 +71,7 @@ export default function PaymentForm() {
                      type="text"
                      name="userId"
                      id="userId"
-                     max={14}
+
                      value={cpf}
                      onChange={handleCpfChange}
                      required
@@ -102,7 +109,6 @@ export default function PaymentForm() {
                      id="price"
                      value={price}
                      onChange={handlePriceChange}
-                     min={0}
                      required
                   />
                </div>
@@ -112,17 +118,17 @@ export default function PaymentForm() {
                   {/* <input type="number" name="parcels" id="parcels" min={0} required /> */}
                   <select name="parcels" id="parcels">
                      <option value="1">1</option>
-                     <option value="1">2</option>
-                     <option value="1">3</option>
-                     <option value="1">4</option>
-                     <option value="1">5</option>
-                     <option value="1">6</option>
-                     <option value="1">7</option>
-                     <option value="1">8</option>
-                     <option value="1">9</option>
-                     <option value="1">10</option>
-                     <option value="1">11</option>
-                     <option value="1">12</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                     <option value="4">4</option>
+                     <option value="5">5</option>
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                     <option value="8">8</option>
+                     <option value="9">9</option>
+                     <option value="10">10</option>
+                     <option value="11">11</option>
+                     <option value="12">12</option>
                   </select>
                </div>
             </FormContentContainer>

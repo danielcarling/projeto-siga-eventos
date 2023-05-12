@@ -55,9 +55,55 @@ export const PixSelected = styled('div', {
 })
 
 export const CardSelected = styled('div', {
+   fontFamily: 'Archivo',
+   marginTop: '1.5rem',
+
+   p: {
+      textAlign: 'center',
+      fontSize: '1.2rem',
+      marginBottom: '1.5rem',
+   }
+})
+
+export const CardNumberAndName = styled('div', {
+   display: 'flex',
+   flexDirection: 'column',
+
+   label: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 10,
+   }
+})
+
+export const CardYear = styled('div', {
 
 })
 
+export const CardInfoContainer = styled('div', {
+   display: 'flex',
+   justifyContent: 'center',
+   gap: '1rem',
+})
+
+export const CardInfo = styled('div', {
+   display: 'flex',
+   flexDirection: 'column',
+
+   justifyContent: 'flex-end',
+})
+
 export const BankSlipSelected = styled('div', {
-   
+   display: 'flex',
+   justifyContent: 'center',
+   marginTop: '2rem',
+
+   a: {
+      background: '$white',
+      padding: '1rem 1.5rem',
+      textDecoration: 'none',
+      borderRadius: 10,
+
+      color: 'black',
+   }
 })
