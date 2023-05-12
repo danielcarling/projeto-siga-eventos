@@ -23,7 +23,7 @@ export const PaymentContainer = styled('div', {
       marginBottom: 8,
    },
 
-   input: {
+   'input, select': {
       height: '2rem',
       marginBottom: 15,
    },

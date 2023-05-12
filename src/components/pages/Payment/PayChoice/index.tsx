@@ -62,6 +62,7 @@ export default function PayChoice() {
                   alt="" 
                />
                <span>00020126270014BR.GOV.BCB.PIX0105teste5204000053039865802BR5905teste6005teste62070503***6304FE0D</span>
+               {/* <button>Copiar</button> */}
             </PixSelected>
          )}
 

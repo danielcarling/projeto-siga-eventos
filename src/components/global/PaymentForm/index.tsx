@@ -12,9 +12,18 @@ export default function PaymentForm() {
 
       const cleanedCpf = cpfValue.replace(/\D/g, "");
 
-      const formattedCpf = cleanedCpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+      // formata para o modelo de cpf caso o tamanho seja menor ou igual a 11
+      if(cleanedCpf.length <= 11) {
+         const formattedCpf = cleanedCpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
 
-      setCpf(formattedCpf);
+         setCpf(formattedCpf)
+      
+      // formata para o modelo de cnpj caso seja maior
+      } else if(cleanedCpf.length>11){
+         const formattedCnpj = cleanedCpf.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
+
+         setCpf(formattedCnpj)
+      }
    };
 
    const handleTelChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,10 +39,8 @@ export default function PaymentForm() {
    const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       const priceValue = event.target.value;
     
-      // Remove tudo que não é número e converte para centavos
       const cleanedPrice = Number(priceValue.replace(/\D/g, "")) / 100;
     
-      // Verifica se o valor inserido é maior que zero antes de formatar
       if (cleanedPrice > 0) {
         const formattedPrice = cleanedPrice.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
         setPrice(formattedPrice);
@@ -57,6 +64,7 @@ export default function PaymentForm() {
                      type="text"
                      name="userId"
                      id="userId"
+                     max={14}
                      value={cpf}
                      onChange={handleCpfChange}
                      required
@@ -101,7 +109,21 @@ export default function PaymentForm() {
 
                <div>
                   <label htmlFor="parcels">Quantidade de Parcelas:</label>
-                  <input type="number" name="parcels" id="parcels" min={0} required />
+                  {/* <input type="number" name="parcels" id="parcels" min={0} required /> */}
+                  <select name="parcels" id="parcels">
+                     <option value="1">1</option>
+                     <option value="1">2</option>
+                     <option value="1">3</option>
+                     <option value="1">4</option>
+                     <option value="1">5</option>
+                     <option value="1">6</option>
+                     <option value="1">7</option>
+                     <option value="1">8</option>
+                     <option value="1">9</option>
+                     <option value="1">10</option>
+                     <option value="1">11</option>
+                     <option value="1">12</option>
+                  </select>
                </div>
             </FormContentContainer>
 
