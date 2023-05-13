@@ -105,5 +105,6 @@ export const BankSlipSelected = styled('div', {
       borderRadius: 10,
 
       color: 'black',
+      fontWeight: 700,
    }
 })

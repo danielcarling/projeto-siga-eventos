@@ -37,8 +37,12 @@ export default function PaymentForm() {
       const telValue = event.target.value
 
       const cleanedTel = telValue.replace(/\D/g, "");
+      const limitedTelNumber = cleanedTel.slice(0, 11);
 
-      const formattedTel = cleanedTel.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+      const formattedTel = limitedTelNumber
+         .replace(/(\d)/, '($1')
+         .replace(/(\d{2})(\d)/, ('$1) $2'))
+         .replace(/(\d{5})/, '$1-')
 
       setTel(formattedTel)
    }
