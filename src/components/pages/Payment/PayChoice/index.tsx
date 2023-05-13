@@ -173,6 +173,7 @@ export default function PayChoice() {
 
          {checked === 'bankSlip' && (
             <BankSlipSelected>
+               <strong>Cliqui no botão abaixo para gerar o boleto:</strong>
                <Link href={'#'}>GERAR BOLETO</Link>
             </BankSlipSelected>
          )}

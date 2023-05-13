@@ -43,6 +43,7 @@ export const PixSelected = styled('div', {
 
    strong: {
       margin: '1rem 0',
+      fontSize: '1.1rem',
    },
 
    img: {
@@ -95,7 +96,11 @@ export const CardInfo = styled('div', {
 
 export const BankSlipSelected = styled('div', {
    display: 'flex',
+   flexDirection: 'column',
    justifyContent: 'center',
+   alignItems: 'center',
+   gap: '1rem',
+
    marginTop: '2rem',
 
    a: {
@@ -103,6 +108,8 @@ export const BankSlipSelected = styled('div', {
       padding: '1rem 1.5rem',
       textDecoration: 'none',
       borderRadius: 10,
+
+      width: '12rem',
 
       color: 'black',
       fontWeight: 700,
