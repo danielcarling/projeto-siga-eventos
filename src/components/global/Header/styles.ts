@@ -4,6 +4,7 @@ export const HeaderContainer = styled('header', {
    display: 'flex',
    justifyContent: 'space-between',
    margin: '1.5rem',
+   flexWrap: 'wrap',
 
    nav: {
       display: 'flex',

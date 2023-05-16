@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Logo from '../SigaLogo'
 import { HeaderContainer } from './styles'
+import { useWindowDimensions } from '@/src/utils/windowWidth'
 
 
 export default function Header() {
