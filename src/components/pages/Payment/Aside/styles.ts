@@ -24,9 +24,6 @@ export const AsideContainer = styled('div', {
    }
 })
 
-export const AsideContent = styled('div', {
-   // display: 'flex',
-   // flexDirection: 'column',
-   
+export const AsideContent = styled('div', {   
    margin: '0 1rem 2rem 0',
 })
