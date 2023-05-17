@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PayChoice from "../../pages/Payment/PayChoice";
 import { FormContentContainer, PaymentContainer, SubmitButton } from "./styles";
+import { useWindowDimensions } from "@/src/utils/windowWidth";
 
 export default function PaymentForm() {
    const [cpf, setCpf] = useState("");
@@ -68,7 +69,9 @@ export default function PaymentForm() {
             <label htmlFor="name">Nome do Cliente:</label>
             <input type="text" name="name" id="name" required />
 
-            <FormContentContainer>
+            <FormContentContainer 
+               mobile={useWindowDimensions()}
+            >
                <div>
                   <label htmlFor="userId">CPF ou CNPJ:</label>
                   <input
@@ -104,7 +107,9 @@ export default function PaymentForm() {
 
             <h2>VALOR DA CONTRATAÇÃO</h2>
 
-            <FormContentContainer>
+            <FormContentContainer
+               mobile={useWindowDimensions()}
+            >
                <div>
                   <label htmlFor="price">Valor Total da Contratação:</label>
                   <input

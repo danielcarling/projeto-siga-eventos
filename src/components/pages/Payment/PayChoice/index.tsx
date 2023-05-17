@@ -3,6 +3,7 @@ import { BankSlipSelected, CardInfo, CardInfoContainer, CardNumberAndName, CardS
 import Image from "next/image";
 import QrCodeImg from '../../../../assets/qrcode.png'
 import Link from "next/link";
+import { useWindowDimensions } from "@/src/utils/windowWidth";
 
 export default function PayChoice() {
    const [checked, setChecked] = useState('');
@@ -11,17 +12,17 @@ export default function PayChoice() {
    const handleCardChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       const cardNumberValue = event.target.value;
       const cleanedCardNumber = cardNumberValue.replace(/\D/g, "");
-    
+
       const limitedCardNumber = cleanedCardNumber.slice(0, 16);
-    
+
       const formattedCardNumber = limitedCardNumber
-        .replace(/(\d{4})(\d)/, "$1 $2")
-        .replace(/(\d{4})(\d)/, "$1 $2")
-        .replace(/(\d{4})(\d)/, "$1 $2")
-        .replace(/(-\d{4})\d+?$/, "$1");
-    
+         .replace(/(\d{4})(\d)/, "$1 $2")
+         .replace(/(\d{4})(\d)/, "$1 $2")
+         .replace(/(\d{4})(\d)/, "$1 $2")
+         .replace(/(-\d{4})\d+?$/, "$1");
+
       setCardNumber(formattedCardNumber);
-    };
+   };
 
    return (
       <PayFormContainer>
@@ -29,7 +30,9 @@ export default function PayChoice() {
 
          <PayFormSelectors>
             <label htmlFor="pix">
-               <PayChoiceContainer>
+               <PayChoiceContainer
+                  mobile={useWindowDimensions()}
+               >
                   Pix
                   <input
                      type="radio"
@@ -43,7 +46,9 @@ export default function PayChoice() {
             </label>
 
             <label htmlFor="card">
-               <PayChoiceContainer>
+               <PayChoiceContainer
+                  mobile={useWindowDimensions()}
+               >
                   Cartão
                   <input type="radio"
                      name="payOption"
@@ -56,7 +61,9 @@ export default function PayChoice() {
             </label>
 
             <label htmlFor="bankSlip">
-               <PayChoiceContainer>
+               <PayChoiceContainer
+                  mobile={useWindowDimensions()}
+               >
                   Boleto
                   <input type="radio"
                      name="payOption"
@@ -90,9 +97,9 @@ export default function PayChoice() {
                <CardNumberAndName>
                   <label htmlFor="cardNumber">
                      Número do cartão:
-                     <input 
-                        type="text" 
-                        name="cardNumber" 
+                     <input
+                        type="text"
+                        name="cardNumber"
                         id="cardNumber"
                         value={cardNumber}
                         onChange={handleCardChange}
@@ -101,9 +108,9 @@ export default function PayChoice() {
                   </label>
                   <label htmlFor="cardName">
                      Nome impresso no cartão:
-                     <input 
-                        type="text" 
-                        name="cardName" 
+                     <input
+                        type="text"
+                        name="cardName"
                         id="cardName"
                         required
                      />

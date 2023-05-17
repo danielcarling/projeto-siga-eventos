@@ -1,8 +1,11 @@
+import { useWindowDimensions } from "@/src/utils/windowWidth";
 import { AsideContainer, AsideContent } from "./styles";
 
 export default function Info() {
    return(
-      <AsideContainer>
+      <AsideContainer
+         mobile={useWindowDimensions()}
+      >
          <h3>Informações:</h3>
 
          <div>

@@ -20,11 +20,35 @@ export const EventsPage = styled('div', {
 })
 
 export const EventContainer = styled('div', {
-   margin: '4rem 0 6rem',
-
+   
    img: {
       borderRadius: 20,
+   },
+
+   variants: {
+      mobile: {
+         yes: {
+            margin: '1.5rem 2rem',
+
+            img: {
+               width: '7rem',
+               height: '7rem',
+            },
+
+            strong: {
+               fontSize: '1.2rem',
+            },
+
+            span: {
+               fontSize: '.8rem',
+            }
+         },
+         no: {
+            margin: '4rem 0 6rem',
+         }
+      }
    }
+
 })
 
 export const EventInfo = styled('div', {

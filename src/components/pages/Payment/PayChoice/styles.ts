@@ -13,23 +13,34 @@ export const PayFormContainer = styled('div', {
 export const PayFormSelectors = styled('div', {
    display: 'flex',
    justifyContent: 'space-around',
-
-   div: {
-      color: 'Black',
-      background: '$white',
-      width: '7rem',
-      height: '7rem',
-      borderRadius: 8,
-
-      textAlign: 'center',
-   }
 })
 
 export const PayChoiceContainer = styled('div', {
    display: 'flex',
    flexDirection: 'column',
+   flexShrink: 'unset',
    justifyContent: 'center',
    alignItems: 'center',
+
+   color: 'Black',
+   background: '$white',
+   borderRadius: 8,
+
+   textAlign: 'center',
+
+
+   variants: {
+      mobile: {
+         yes: {
+            width: '5rem',
+            height: '5rem',
+         },
+         no: {
+            width: '7rem',
+            height: '7rem',
+         }
+      }
+   }
 })
 
 export const PixSelected = styled('div', {
@@ -49,9 +60,9 @@ export const PixSelected = styled('div', {
    img: {
       marginBottom: '1rem',
    },
-   
+
    span: {
-      
+
    },
 })
 

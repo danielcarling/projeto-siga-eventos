@@ -7,6 +7,7 @@ import Info from '../../components/pages/Payment/Aside'
 import Image from 'next/image'
 import telaBranca from '../../assets/tela-branca.jpg'
 import { EventContainer, EventGroup, EventInfo, EventsPage, LocationContainer, LogoContainer } from './styles'
+import { useWindowDimensions } from '@/src/utils/windowWidth'
 
 
 interface Event {
@@ -60,7 +61,10 @@ export default function Payment() {
             <EventGroup>
                <>
                   {events.map((event) => (
-                     <EventContainer key={event.name}>
+                     <EventContainer 
+                        key={event.name}
+                        mobile={useWindowDimensions()}
+                     >
                         <Image src={telaBranca} width={200} height={200} alt="" />
                         <EventInfo>
                            <strong>{event.name}</strong>
