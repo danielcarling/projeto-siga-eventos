@@ -42,6 +42,7 @@ export const HeaderContainer = styled('header', {
          yes: {
             display: 'grid',
             justifyContent: 'space-between',
+            alignItems: 'center',
             gridTemplateAreas: `
           'logo button'
           'nav nav'

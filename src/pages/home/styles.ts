@@ -110,7 +110,7 @@ export const InfoContainer = styled('div', {
    variants: {
       mobile: {
          yes: {
-
+            maxWidth: '30rem',
          },
 
          no: {
