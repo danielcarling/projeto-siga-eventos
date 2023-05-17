@@ -6,7 +6,9 @@ import { useWindowDimensions } from '@/src/utils/windowWidth'
 
 export default function Header() {
    return(
-      <HeaderContainer>
+      <HeaderContainer
+         mobile={useWindowDimensions()}
+      >
          <Logo />
 
 
@@ -18,7 +20,7 @@ export default function Header() {
 
          <div>
             <button>Entrar</button>
-         </div>
+         </div>   
       </HeaderContainer>
    )
 }
