@@ -76,7 +76,6 @@ export const LinkContainer = styled('div', {
             }
          },
          no: {
-            width: '10.25rem',
             height: '3.5rem',
          }
       }

@@ -11,7 +11,7 @@ export const LogoContainer = styled('section', {
             padding: 6,
 
             img: {
-               width: 'auto',
+               width: '11rem',
                height: 'auto',
             }
          },

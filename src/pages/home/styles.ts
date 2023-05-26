@@ -48,7 +48,7 @@ export const DiscountContent = styled('div', {
       mobile: {
          yes: {
             img: {
-               maxWidth: '30rem',
+               maxWidth: '100%',
                height: 'auto',
             }
          },
@@ -133,7 +133,7 @@ export const InfoHeader = styled('div', {
       mobile: {
          yes: {
             textAlign: 'center',
-            // margin: 'auto',
+            margin: 'auto',
 
             h3: {
                fontSize: '1.2rem',
