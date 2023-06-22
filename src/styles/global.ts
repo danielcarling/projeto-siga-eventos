@@ -1,4 +1,4 @@
-import { globalCss } from "@stitches/react"
+import { globalCss, styled } from "@stitches/react"
 
 export const globalStyles = globalCss({
    '*': {
@@ -8,14 +8,21 @@ export const globalStyles = globalCss({
    },
 
    body: {
-      backgroundColor: '$white',
-      '-webkit-font-smoothing': 'antialised',
-      maxWidth: '50rem',
-      margin: 'auto',
+      backgroundColor: '$gray900',
+      color: '$gray100',
+      '-webkit-font-smoothing': 'antialiased',
    },
 
-   button: {
-      fontFamily: 'Inter',
-      fontWeight: 700,
+   'body, input, textarea, button': {
+      fontFamily: 'Roboto',
+      fontWeight: 400,
    }
+})
+
+export const Container = styled('div', {
+   display: 'flex',
+   flexDirection: 'column',
+   alignItems: 'flex-start',
+   justifyContent: 'center',
+   minHeight: '100vh',
 })
